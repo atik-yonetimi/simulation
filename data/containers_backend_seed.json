@@ -1,0 +1,21 @@
+{
+  "name": "kahramanmaras-backend-seed",
+  "description": "Kahramanmaras sehir ici dataset. Her turden 250 konteyner.",
+  "generator": {
+    "city": "Kahramanmaras",
+    "types": ["CAM", "PLASTIK", "KAGIT", "IKINCI_EL_ESYA", "METAL"],
+    "countPerType": 250,
+    "idBaseByType": {
+      "CAM": 10000,
+      "PLASTIK": 20000,
+      "KAGIT": 30000,
+      "IKINCI_EL_ESYA": 40000,
+      "METAL": 50000
+    },
+    "latRange": [37.45, 37.70],
+    "lngRange": [36.80, 37.10],
+    "grid": { "rows": 25, "cols": 10 },
+    "typeOffset": 0.0002,
+    "fillPercent": { "min": 60, "max": 95 }
+  }
+}
