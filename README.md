@@ -6,7 +6,7 @@ demo odaklı bir simülasyon içerir. Amaç: uçtan uca demo senaryosunu güveni
 
 ---
 
-## Hızlı Başlangıç
+## Hızlı Başlangıç için 
 
 ### 1) Kurulum
 Python 3.10+ önerilir.
@@ -36,7 +36,7 @@ Varsayılan hedef:
 
 ---
 
-## Senaryolar
+## Senaryolars
 
 ### A) backend-seed (varsayılan)
 Backend’in **in-memory seed** verisiyle uyumludur.
