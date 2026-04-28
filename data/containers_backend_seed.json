@@ -1,21 +1,532 @@
 {
-  "name": "kahramanmaras-backend-seed",
-  "description": "Kahramanmaras sehir ici dataset. Her turden 250 konteyner.",
-  "generator": {
-    "city": "Kahramanmaras",
-    "types": ["CAM", "PLASTIK", "KAGIT", "IKINCI_EL_ESYA", "METAL"],
-    "countPerType": 250,
-    "idBaseByType": {
-      "CAM": 10000,
-      "PLASTIK": 20000,
-      "KAGIT": 30000,
-      "IKINCI_EL_ESYA": 40000,
-      "METAL": 50000
+  "name": "backend-seed",
+  "description": "Backend-DB/database/atik_yonetimi.sql icindeki gercek 'containers' tablosu seed verisi ile birebir uyumlu container seti. ID/lat/lng degerleri DB ile aynidir; fillPercent deterministik uretilmistir (60-95 araligi).",
+  "source": "Backend-DB/database/atik_yonetimi.sql",
+  "containers": [
+    {
+      "id": 1,
+      "wasteType": "CAM",
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 67.0
     },
-    "latRange": [37.45, 37.70],
-    "lngRange": [36.80, 37.10],
-    "grid": { "rows": 25, "cols": 10 },
-    "typeOffset": 0.0002,
-    "fillPercent": { "min": 60, "max": 95 }
-  }
+    {
+      "id": 2,
+      "wasteType": "PLASTIK",
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 74.0
+    },
+    {
+      "id": 3,
+      "wasteType": "CAM",
+      "lat": 37.586163,
+      "lng": 36.827445,
+      "fillPercent": 81.0
+    },
+    {
+      "id": 4,
+      "wasteType": "PLASTIK",
+      "lat": 37.586163,
+      "lng": 36.827445,
+      "fillPercent": 88.0
+    },
+    {
+      "id": 5,
+      "wasteType": "KAGIT",
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 95.0
+    },
+    {
+      "id": 6,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 66.0
+    },
+    {
+      "id": 7,
+      "wasteType": "METAL",
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 73.0
+    },
+    {
+      "id": 8,
+      "wasteType": "CAM",
+      "lat": 37.585568,
+      "lng": 36.82443,
+      "fillPercent": 80.0
+    },
+    {
+      "id": 9,
+      "wasteType": "PLASTIK",
+      "lat": 37.585568,
+      "lng": 36.82443,
+      "fillPercent": 87.0
+    },
+    {
+      "id": 10,
+      "wasteType": "KAGIT",
+      "lat": 37.586163,
+      "lng": 36.827445,
+      "fillPercent": 94.0
+    },
+    {
+      "id": 11,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.586163,
+      "lng": 36.827445,
+      "fillPercent": 65.0
+    },
+    {
+      "id": 12,
+      "wasteType": "METAL",
+      "lat": 37.586163,
+      "lng": 36.827445,
+      "fillPercent": 72.0
+    },
+    {
+      "id": 13,
+      "wasteType": "CAM",
+      "lat": 37.586392,
+      "lng": 36.819903,
+      "fillPercent": 79.0
+    },
+    {
+      "id": 14,
+      "wasteType": "PLASTIK",
+      "lat": 37.586392,
+      "lng": 36.819903,
+      "fillPercent": 86.0
+    },
+    {
+      "id": 15,
+      "wasteType": "KAGIT",
+      "lat": 37.585568,
+      "lng": 36.82443,
+      "fillPercent": 93.0
+    },
+    {
+      "id": 16,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585568,
+      "lng": 36.82443,
+      "fillPercent": 64.0
+    },
+    {
+      "id": 17,
+      "wasteType": "METAL",
+      "lat": 37.585568,
+      "lng": 36.82443,
+      "fillPercent": 71.0
+    },
+    {
+      "id": 18,
+      "wasteType": "CAM",
+      "lat": 37.587982,
+      "lng": 36.817832,
+      "fillPercent": 78.0
+    },
+    {
+      "id": 19,
+      "wasteType": "PLASTIK",
+      "lat": 37.587982,
+      "lng": 36.817832,
+      "fillPercent": 85.0
+    },
+    {
+      "id": 20,
+      "wasteType": "KAGIT",
+      "lat": 37.586392,
+      "lng": 36.819903,
+      "fillPercent": 92.0
+    },
+    {
+      "id": 21,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.586392,
+      "lng": 36.819903,
+      "fillPercent": 63.0
+    },
+    {
+      "id": 22,
+      "wasteType": "METAL",
+      "lat": 37.586392,
+      "lng": 36.819903,
+      "fillPercent": 70.0
+    },
+    {
+      "id": 23,
+      "wasteType": "CAM",
+      "lat": 37.588187,
+      "lng": 36.812682,
+      "fillPercent": 77.0
+    },
+    {
+      "id": 24,
+      "wasteType": "PLASTIK",
+      "lat": 37.588187,
+      "lng": 36.812682,
+      "fillPercent": 84.0
+    },
+    {
+      "id": 25,
+      "wasteType": "KAGIT",
+      "lat": 37.587982,
+      "lng": 36.817832,
+      "fillPercent": 91.0
+    },
+    {
+      "id": 26,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.587982,
+      "lng": 36.817832,
+      "fillPercent": 62.0
+    },
+    {
+      "id": 27,
+      "wasteType": "METAL",
+      "lat": 37.587982,
+      "lng": 36.817832,
+      "fillPercent": 69.0
+    },
+    {
+      "id": 28,
+      "wasteType": "CAM",
+      "lat": 37.585806,
+      "lng": 36.808187,
+      "fillPercent": 76.0
+    },
+    {
+      "id": 29,
+      "wasteType": "PLASTIK",
+      "lat": 37.585806,
+      "lng": 36.808187,
+      "fillPercent": 83.0
+    },
+    {
+      "id": 30,
+      "wasteType": "KAGIT",
+      "lat": 37.588187,
+      "lng": 36.812682,
+      "fillPercent": 90.0
+    },
+    {
+      "id": 31,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.588187,
+      "lng": 36.812682,
+      "fillPercent": 61.0
+    },
+    {
+      "id": 32,
+      "wasteType": "METAL",
+      "lat": 37.588187,
+      "lng": 36.812682,
+      "fillPercent": 68.0
+    },
+    {
+      "id": 33,
+      "wasteType": "CAM",
+      "lat": 37.585712,
+      "lng": 36.81236,
+      "fillPercent": 75.0
+    },
+    {
+      "id": 34,
+      "wasteType": "PLASTIK",
+      "lat": 37.585712,
+      "lng": 36.81236,
+      "fillPercent": 82.0
+    },
+    {
+      "id": 35,
+      "wasteType": "KAGIT",
+      "lat": 37.585806,
+      "lng": 36.808187,
+      "fillPercent": 89.0
+    },
+    {
+      "id": 36,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585806,
+      "lng": 36.808187,
+      "fillPercent": 60.0
+    },
+    {
+      "id": 37,
+      "wasteType": "METAL",
+      "lat": 37.585806,
+      "lng": 36.808187,
+      "fillPercent": 67.0
+    },
+    {
+      "id": 38,
+      "wasteType": "CAM",
+      "lat": 37.585049,
+      "lng": 36.818122,
+      "fillPercent": 74.0
+    },
+    {
+      "id": 39,
+      "wasteType": "PLASTIK",
+      "lat": 37.585049,
+      "lng": 36.818122,
+      "fillPercent": 81.0
+    },
+    {
+      "id": 40,
+      "wasteType": "KAGIT",
+      "lat": 37.585712,
+      "lng": 36.81236,
+      "fillPercent": 88.0
+    },
+    {
+      "id": 41,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585712,
+      "lng": 36.81236,
+      "fillPercent": 95.0
+    },
+    {
+      "id": 42,
+      "wasteType": "METAL",
+      "lat": 37.585712,
+      "lng": 36.81236,
+      "fillPercent": 66.0
+    },
+    {
+      "id": 43,
+      "wasteType": "CAM",
+      "lat": 37.585219,
+      "lng": 36.824859,
+      "fillPercent": 73.0
+    },
+    {
+      "id": 44,
+      "wasteType": "PLASTIK",
+      "lat": 37.585219,
+      "lng": 36.824859,
+      "fillPercent": 80.0
+    },
+    {
+      "id": 45,
+      "wasteType": "KAGIT",
+      "lat": 37.585049,
+      "lng": 36.818122,
+      "fillPercent": 87.0
+    },
+    {
+      "id": 46,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585049,
+      "lng": 36.818122,
+      "fillPercent": 94.0
+    },
+    {
+      "id": 47,
+      "wasteType": "METAL",
+      "lat": 37.585049,
+      "lng": 36.818122,
+      "fillPercent": 65.0
+    },
+    {
+      "id": 48,
+      "wasteType": "CAM",
+      "lat": 37.587039,
+      "lng": 36.829881,
+      "fillPercent": 72.0
+    },
+    {
+      "id": 49,
+      "wasteType": "PLASTIK",
+      "lat": 37.587039,
+      "lng": 36.829881,
+      "fillPercent": 79.0
+    },
+    {
+      "id": 50,
+      "wasteType": "KAGIT",
+      "lat": 37.585219,
+      "lng": 36.824859,
+      "fillPercent": 86.0
+    },
+    {
+      "id": 51,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585219,
+      "lng": 36.824859,
+      "fillPercent": 93.0
+    },
+    {
+      "id": 52,
+      "wasteType": "METAL",
+      "lat": 37.585219,
+      "lng": 36.824859,
+      "fillPercent": 64.0
+    },
+    {
+      "id": 53,
+      "wasteType": "CAM",
+      "lat": 37.587073,
+      "lng": 36.813927,
+      "fillPercent": 71.0
+    },
+    {
+      "id": 54,
+      "wasteType": "PLASTIK",
+      "lat": 37.587073,
+      "lng": 36.813927,
+      "fillPercent": 78.0
+    },
+    {
+      "id": 55,
+      "wasteType": "KAGIT",
+      "lat": 37.587039,
+      "lng": 36.829881,
+      "fillPercent": 85.0
+    },
+    {
+      "id": 56,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.587039,
+      "lng": 36.829881,
+      "fillPercent": 92.0
+    },
+    {
+      "id": 57,
+      "wasteType": "METAL",
+      "lat": 37.587039,
+      "lng": 36.829881,
+      "fillPercent": 63.0
+    },
+    {
+      "id": 58,
+      "wasteType": "CAM",
+      "lat": 37.58811,
+      "lng": 36.807886,
+      "fillPercent": 70.0
+    },
+    {
+      "id": 59,
+      "wasteType": "PLASTIK",
+      "lat": 37.58811,
+      "lng": 36.807886,
+      "fillPercent": 77.0
+    },
+    {
+      "id": 60,
+      "wasteType": "KAGIT",
+      "lat": 37.587073,
+      "lng": 36.813927,
+      "fillPercent": 84.0
+    },
+    {
+      "id": 61,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.587073,
+      "lng": 36.813927,
+      "fillPercent": 91.0
+    },
+    {
+      "id": 62,
+      "wasteType": "METAL",
+      "lat": 37.587073,
+      "lng": 36.813927,
+      "fillPercent": 62.0
+    },
+    {
+      "id": 63,
+      "wasteType": "CAM",
+      "lat": 37.585661,
+      "lng": 36.815246,
+      "fillPercent": 69.0
+    },
+    {
+      "id": 64,
+      "wasteType": "PLASTIK",
+      "lat": 37.585661,
+      "lng": 36.815246,
+      "fillPercent": 76.0
+    },
+    {
+      "id": 65,
+      "wasteType": "KAGIT",
+      "lat": 37.58811,
+      "lng": 36.807886,
+      "fillPercent": 83.0
+    },
+    {
+      "id": 66,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.58811,
+      "lng": 36.807886,
+      "fillPercent": 90.0
+    },
+    {
+      "id": 67,
+      "wasteType": "METAL",
+      "lat": 37.58811,
+      "lng": 36.807886,
+      "fillPercent": 61.0
+    },
+    {
+      "id": 68,
+      "wasteType": "CAM",
+      "lat": 37.589474,
+      "lng": 36.816077,
+      "fillPercent": 68.0
+    },
+    {
+      "id": 69,
+      "wasteType": "PLASTIK",
+      "lat": 37.589474,
+      "lng": 36.816077,
+      "fillPercent": 75.0
+    },
+    {
+      "id": 70,
+      "wasteType": "KAGIT",
+      "lat": 37.585661,
+      "lng": 36.815246,
+      "fillPercent": 82.0
+    },
+    {
+      "id": 71,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.585661,
+      "lng": 36.815246,
+      "fillPercent": 89.0
+    },
+    {
+      "id": 72,
+      "wasteType": "METAL",
+      "lat": 37.585661,
+      "lng": 36.815246,
+      "fillPercent": 60.0
+    },
+    {
+      "id": 75,
+      "wasteType": "KAGIT",
+      "lat": 37.589474,
+      "lng": 36.816077,
+      "fillPercent": 81.0
+    },
+    {
+      "id": 76,
+      "wasteType": "IKINCI_EL_ESYA",
+      "lat": 37.589474,
+      "lng": 36.816077,
+      "fillPercent": 88.0
+    },
+    {
+      "id": 77,
+      "wasteType": "METAL",
+      "lat": 37.589474,
+      "lng": 36.816077,
+      "fillPercent": 95.0
+    }
+  ]
 }

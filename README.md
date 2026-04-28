@@ -38,22 +38,39 @@ Varsayılan hedef:
 
 ## Senaryolar
 
-### A) backend-seed (varsayılan)
-Backend’in **in-memory seed** verisiyle uyumludur.
+### A) backend-seed (varsayılan, ÖNERİLEN)
+
+`Backend-DB/database/atik_yonetimi.sql` içindeki gerçek **75 konteyner** seed
+verisiyle **birebir** uyumludur (id, wasteType, lat, lng). Konteynerler
+Kahramanmaraş Sütçü İmam Üniversitesi çevresindedir (lat ≈ 37.585–37.590,
+lng ≈ 36.808–36.832).
 
 ```bash
-python simulate.py --scenario backend-seed
+python simulate.py --scenario backend-seed --once
 ```
 
-### B) demo (5 atık türü)
-Gerçek demo senaryosu için hazırlanmış tam 5 tür seti içerir.
+Veri dosyası: `data/containers_backend_seed.json` (fixed-list formatı,
+`source: Backend-DB/database/atik_yonetimi.sql`).
+
+DB seed dosyası güncellenirse JSON'u şu komutla yeniden üretebilirsin
+(yalnızca `Backend-DB` repo'su simulation ile aynı üst klasörde
+klonlanmışsa):
 
 ```bash
+python data/_build_seed_from_db.py
+```
+
+### B) demo (sentetik 1250 konteyner — ⚠️ DB ile UYUMSUZ)
+
+Bu dosya jenerik bir generator çıktısıdır (ID aralıkları 10001–50250).
+**Backend DB seed'i ile uyumsuzdur**, ingest 404 döner. Kullanılmak
+isteniyorsa öncesinde DB'ye aynı 1250 konteynerin INSERT edilmesi gerekir.
+Demo / sunum amaçlı **kullanmayın**, `backend-seed` senaryosunu tercih edin.
+
+```bash
+# Sadece DB'de uygun seed varsa:
 python simulate.py --scenario demo --containers-file data/containers_demo.json
 ```
-
-> Not: backend tarafında bu container ID’leri yoksa ingest 404 döner.
-> Bu senaryoyu kullanmadan önce backend/DB’de aynı container kayıtları olmalıdır.
 
 ---
 
@@ -81,9 +98,15 @@ python simulate.py --scenario demo --containers-file data/containers_demo.json
 
 ## Container dosya formatı
 
-### A) Generator formatı (önerilen)
+`simulate.py` iki farklı format destekler. Demo için **B) Sabit liste**
+formatı kullanılır (DB seed ile birebir eşleştirmek icin); generator
+formatı yalnızca kullanılabilir bir referans olarak korunmuştur.
+
+### A) Generator formatı (sentetik veri üretmek için)
 
 Bu format, **Kahramanmaras** için 5 türde 250’şer konteyneri **deterministik** üretir.
+DB seed verisiyle uyumlu DEĞİLDİR; sadece backend'in ağ/yük testleri gibi
+senaryolar için faydalıdır.
 
 ```json
 {
@@ -109,19 +132,25 @@ Bu format, **Kahramanmaras** için 5 türde 250’şer konteyneri **deterministi
 }
 ```
 
-### B) Sabit liste formatı
+### B) Sabit liste formatı (varsayılan, DB-uyumlu)
+
+`data/containers_backend_seed.json` bu formattadır. ID/lat/lng değerleri
+`Backend-DB/database/atik_yonetimi.sql` içindeki `containers` tablosundan
+birebir kopyalanmıştır. DB güncellenirse `data/_build_seed_from_db.py`
+ile yeniden üretilir.
 
 ```json
 {
   "name": "backend-seed",
   "description": "Backend Seed Data ile uyumlu container seti",
+  "source": "Backend-DB/database/atik_yonetimi.sql",
   "containers": [
     {
       "id": 1,
       "wasteType": "CAM",
-      "lat": 41.015,
-      "lng": 28.984,
-      "fillPercent": 78
+      "lat": 37.58771,
+      "lng": 36.832294,
+      "fillPercent": 67.0
     }
   ]
 }
@@ -157,8 +186,15 @@ Bu format, **Kahramanmaras** için 5 türde 250’şer konteyneri **deterministi
 
 ## Önerilen demo akışı
 
-1) Backend’i çalıştır  
-2) `python simulate.py --scenario backend-seed --once`  
-3) `/routes/generate` ile rota üret  
+1) PostgreSQL ayağa kalkmış ve `Backend-DB/database/atik_yonetimi.sql` ile
+   seed edilmiş olmalı (75 konteyner, 5 araç, 5 sürücü)
+2) `Backend-DB/waste-management` Spring Boot uygulamasını başlat
+   (varsayılan: `http://localhost:8080`)
+3) Simülasyonu **backend-seed** senaryosu ile çalıştır:
+   `python simulate.py --scenario backend-seed --once`  
+   → Backend `/telemetry/ingest` 200 dönmelidir; 404 döndüğü an
+   `data/containers_backend_seed.json` ile DB seed eşleşmiyor demektir
+   (`data/_build_seed_from_db.py` ile yeniden üret).
+4) `/routes/generate` ile rota üret  
 4) Mobilde `/routes/active` ile rota doğrula  
 5) Bir durak için collection kaydı gönder
